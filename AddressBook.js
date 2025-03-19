@@ -163,3 +163,11 @@ function addUniqueContact(contact) {
 // Example Usage
 let contact3 = new Contact("John", "Doe", "789 Pine St", "Miami", "FL", "33101", "9988776655", "abc@bridgelabz.co.in");
 addUniqueContact(contact3);
+
+//UC8
+function searchByCityOrState(city, state) {
+    return addressBook.filter(contact => contact.city === city || contact.state === state);
+}
+
+// Example Usage
+console.log("Contacts in New York: ", searchByCityOrState("New York", ""));
