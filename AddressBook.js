@@ -184,3 +184,16 @@ function viewByCityOrState() {
 
 // Example Usage
 viewByCityOrState();
+
+//UC10
+function countByCityOrState() {
+    let cityCount = addressBook.reduce((acc, contact) => {
+        acc[contact.city] = (acc[contact.city] || 0) + 1;
+        return acc;
+    }, {});
+
+    console.log("Contact Count by City: ", cityCount);
+}
+
+// Example Usage
+countByCityOrState();
