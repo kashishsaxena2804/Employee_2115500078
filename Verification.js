@@ -86,3 +86,21 @@ const testEmails = [
 testEmails.forEach(email => {
     console.log(`${email}: ${emailRegex.test(email)}`);
 });
+
+//Email UC4
+const emailRegex = /^abc([._+-][a-zA-Z0-9]+)?@bridgelabz\.co(\.[a-z]{2,})?$/;
+
+const testEmails = [
+    "abc@bridgelabz.co",         // Valid
+    "abc.xyz@bridgelabz.co.in",  // Valid (xyz part included)
+    "abc-xyz@bridgelabz.co",     // Valid (- used)
+    "abc+xyz@bridgelabz.co.us",  // Valid (+ used, .us optional part)
+    "abc@bridgelabzcom",         // Invalid (missing . before co)
+    "abc@xyz.co",                // Invalid (wrong domain)
+    "abc#xyz@bridgelabz.co",     // Invalid (# not allowed)
+    "abc..xyz@bridgelabz.co",    // Invalid (double dots)
+];
+
+testEmails.forEach(email => {
+    console.log(`${email}: ${emailRegex.test(email)}`);
+});
