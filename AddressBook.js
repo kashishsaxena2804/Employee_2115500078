@@ -141,3 +141,11 @@ function deleteContact(name) {
 
 // Example Usage
 deleteContact("Alice");
+
+//UC6
+function getContactCount() {
+    return addressBook.reduce(count => count + 1, 0);
+}
+
+// Example Usage
+console.log("Total Contacts: ", getContactCount());
