@@ -71,3 +71,18 @@ const testEmails = [
 testEmails.forEach(email => {
     console.log(`${email}: ${emailRegex.test(email)}`);
 });
+
+//Email UC3
+const emailRegex = /^abc@bridgelabz\.co$/;
+
+const testEmails = [
+    "abc@bridgelabz.co",    // Valid
+    "abc@bridgelabzcom",    // Invalid (missing . before co)
+    "abc@xyz.co",           // Invalid (wrong domain)
+    "abc@bridgelabz.",      // Invalid (missing co after .)
+    "abc@bridgelabz.co.in"  // Invalid (optional part not handled yet)
+];
+
+testEmails.forEach(email => {
+    console.log(`${email}: ${emailRegex.test(email)}`);
+});
