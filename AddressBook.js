@@ -149,3 +149,17 @@ function getContactCount() {
 
 // Example Usage
 console.log("Total Contacts: ", getContactCount());
+
+//UC7
+function addUniqueContact(contact) {
+    if (addressBook.some(existing => existing.firstName === contact.firstName)) {
+        console.log("Duplicate Entry! Contact not added.");
+    } else {
+        addressBook.push(contact);
+        console.log("Contact added successfully!");
+    }
+}
+
+// Example Usage
+let contact3 = new Contact("John", "Doe", "789 Pine St", "Miami", "FL", "33101", "9988776655", "abc@bridgelabz.co.in");
+addUniqueContact(contact3);
