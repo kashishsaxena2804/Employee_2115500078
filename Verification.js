@@ -18,3 +18,13 @@ if (pinCodePattern.test(pinCode)) {
 } else {
     console.log("Invalid PIN Code");
 }
+
+//UC3
+const pinCodePattern = /^[0-9]{5}[0-9]$/; // Ensures exactly 6 digits
+const pinCode = "400088B"; // Test case
+
+if (pinCodePattern.test(pinCode)) {
+    console.log("Valid PIN Code");
+} else {
+    console.log("Invalid PIN Code");
+}
