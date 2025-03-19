@@ -28,3 +28,13 @@ if (pinCodePattern.test(pinCode)) {
 } else {
     console.log("Invalid PIN Code");
 }
+
+//UC4 
+const pinCodePattern = /^[0-9]{3}\s?[0-9]{3}$/; // Allows optional space
+const pinCode = "400 088"; // Test case
+
+if (pinCodePattern.test(pinCode)) {
+    console.log("Valid PIN Code");
+} else {
+    console.log("Invalid PIN Code");
+}
