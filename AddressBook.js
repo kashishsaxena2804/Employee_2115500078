@@ -197,3 +197,12 @@ function countByCityOrState() {
 
 // Example Usage
 countByCityOrState();
+
+//UC11
+function sortByName() {
+    addressBook.sort((a, b) => a.firstName.localeCompare(b.firstName));
+    console.log("Sorted Address Book: ", addressBook);
+}
+
+// Example Usage
+sortByName();
