@@ -61,3 +61,55 @@ try {
 } catch (error) {
     console.error(error);
 }
+
+
+//UC3
+class Contact {
+    constructor(firstName, lastName, address, city, state, zip, phoneNumber, email) {
+        if (!/^[A-Z][a-zA-Z]{2,}$/.test(firstName)) throw "Invalid First Name!";
+        if (!/^[A-Z][a-zA-Z]{2,}$/.test(lastName)) throw "Invalid Last Name!";
+        if (!/^[A-Za-z0-9\s]{4,}$/.test(address)) throw "Invalid Address!";
+        if (!/^[A-Za-z\s]{4,}$/.test(city)) throw "Invalid City!";
+        if (!/^[A-Za-z\s]{4,}$/.test(state)) throw "Invalid State!";
+        if (!/^\d{6}$/.test(zip)) throw "Invalid Zip!";
+        if (!/^\d{10}$/.test(phoneNumber)) throw "Invalid Phone Number!";
+        if (!/^abc([._+-][a-zA-Z0-9]+)?@bridgelabz\.co(\.[a-zA-Z]{2})?$/.test(email)) throw "Invalid Email!";
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    display() {
+        return `Name: ${this.firstName} ${this.lastName}, Address: ${this.address}, ${this.city}, ${this.state} - ${this.zip}, Phone: ${this.phoneNumber}, Email: ${this.email}`;
+    }
+}
+
+// Address Book Array
+let addressBook = [];
+
+// Function to Add Contacts
+function addContact(contact) {
+    addressBook.push(contact);
+    console.log("Contact added successfully!");
+}
+
+// Testing the functionality
+try {
+    let contact1 = new Contact("John", "Doe", "123 Main St", "New York", "NY", "100001", "9876543210", "abc.xyz@bridgelabz.co.in");
+    addContact(contact1);
+
+    let contact2 = new Contact("Alice", "Smith", "456 Elm St", "Los Angeles", "CA", "900001", "8765432109", "abc@bridgelabz.co.us");
+    addContact(contact2);
+} catch (error) {
+    console.error(error);
+}
+
+// Displaying the contacts
+console.log("Address Book:");
+addressBook.forEach(contact => console.log(contact.display()));
