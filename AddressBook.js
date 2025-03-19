@@ -127,3 +127,17 @@ function editContact(name, updatedContact) {
 
 // Example Usage
 editContact("John", { city: "Boston", phoneNumber: "9988776655" });
+
+//UC5
+function deleteContact(name) {
+    let index = addressBook.findIndex(contact => contact.firstName === name);
+    if (index !== -1) {
+        addressBook.splice(index, 1);
+        console.log("Contact deleted successfully!");
+    } else {
+        console.log("Contact not found!");
+    }
+}
+
+// Example Usage
+deleteContact("Alice");
