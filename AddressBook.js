@@ -113,3 +113,17 @@ try {
 // Displaying the contacts
 console.log("Address Book:");
 addressBook.forEach(contact => console.log(contact.display()));
+
+//UC4
+function editContact(name, updatedContact) {
+    let contact = addressBook.find(contact => contact.firstName === name);
+    if (contact) {
+        Object.assign(contact, updatedContact);
+        console.log("Contact updated successfully!");
+    } else {
+        console.log("Contact not found!");
+    }
+}
+
+// Example Usage
+editContact("John", { city: "Boston", phoneNumber: "9988776655" });
