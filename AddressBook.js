@@ -206,3 +206,27 @@ function sortByName() {
 
 // Example Usage
 sortByName();
+
+//UC12
+// Function to Sort by City
+function sortByCity() {
+    addressBook.sort((a, b) => a.city.localeCompare(b.city));
+    console.log("Sorted by City: ", addressBook);
+}
+
+// Function to Sort by State
+function sortByState() {
+    addressBook.sort((a, b) => a.state.localeCompare(b.state));
+    console.log("Sorted by State: ", addressBook);
+}
+
+// Function to Sort by Zip
+function sortByZip() {
+    addressBook.sort((a, b) => a.zip - b.zip);
+    console.log("Sorted by Zip: ", addressBook);
+}
+
+// Example Usage
+sortByCity();  // Sort by City
+sortByState(); // Sort by State
+sortByZip();   // Sort by Zip
