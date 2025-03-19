@@ -171,3 +171,16 @@ function searchByCityOrState(city, state) {
 
 // Example Usage
 console.log("Contacts in New York: ", searchByCityOrState("New York", ""));
+
+//UC9
+function viewByCityOrState() {
+    let groupedByCity = addressBook.reduce((acc, contact) => {
+        (acc[contact.city] = acc[contact.city] || []).push(contact);
+        return acc;
+    }, {});
+
+    console.log("Contacts Grouped by City: ", groupedByCity);
+}
+
+// Example Usage
+viewByCityOrState();
